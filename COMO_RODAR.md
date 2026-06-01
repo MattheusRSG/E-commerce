@@ -17,24 +17,26 @@
 ### 1. Criar o Banco
 ```sql
 -- Conectar no PostgreSQL como superuser
-CREATE DATABASE ecommerce;
+CREATE DATABASE estilo_feminino;
 ```
 
 ### 2. Configurar Usuário (se necessário)
 ```sql
 -- Criar usuário (opcional)
-CREATE USER postgres WITH PASSWORD '1234';
-GRANT ALL PRIVILEGES ON DATABASE ecommerce TO postgres;
+CREATE USER postgres WITH PASSWORD '010203040506070809';
+GRANT ALL PRIVILEGES ON DATABASE estilo_feminino TO postgres;
 ```
 
 ### 3. Verificar Configurações
-No arquivo `SessionManager.java`, as configurações são:
-- **URL:** `jdbc:postgresql://localhost:5432/ecommerce`
+No arquivo `src/main/resources/application.properties`, as configurações padrão são:
+- **URL:** `jdbc:postgresql://localhost:5432/estilo_feminino`
 - **Usuário:** `postgres`
-- **Senha:** `1234`
+- **Senha:** `010203040506070809`
 
-**Se suas configurações forem diferentes, edite o arquivo:**
-`src/main/java/com/ecommerce/util/SessionManager.java`
+Também é possível sobrescrever por variável de ambiente:
+- `DB_URL`
+- `DB_USER`
+- `DB_PASSWORD`
 
 ## 🔧 Executar o Projeto
 
@@ -91,8 +93,8 @@ Projeto-e-commerce/
 
 ### Erro de Conexão com Banco
 1. Verificar se PostgreSQL está rodando
-2. Confirmar usuário/senha no `SessionManager.java`
-3. Verificar se o banco `ecommerce` existe
+2. Confirmar usuário/senha no `application.properties` ou variáveis `DB_*`
+3. Verificar se o banco `estilo_feminino` existe
 
 ### Erro de Compilação
 1. Verificar se JDK está instalado

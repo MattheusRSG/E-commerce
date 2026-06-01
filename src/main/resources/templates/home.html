@@ -58,13 +58,23 @@
             color: #846651 !important;
             text-shadow: 0 2px 10px rgba(132, 102, 81, 0.3);
         }
+
+        .brand-logo {
+            height: 76px;
+            width: auto;
+            display: block;
+        }
+
+        .brand-text-fallback {
+            display: none;
+        }
         
         @media (max-width: 768px) {
             .navbar-brand {
                 font-size: 1.8rem;
             }
-            .navbar-brand img {
-                height: 35px !important;
+            .brand-logo {
+                height: 56px;
             }
         }
         
@@ -95,6 +105,14 @@
         
         .nav-link:hover::after {
             width: 100%;
+        }
+
+        .navbar-search-input {
+            color: #846651 !important;
+        }
+
+        .navbar-search-input::placeholder {
+            color: rgba(132, 102, 81, 0.75);
         }
         
         /* Glass Buttons */
@@ -136,6 +154,83 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .carousel-hero {
+            padding-top: 90px;
+        }
+
+        .home-carousel .carousel-item {
+            height: 72vh;
+            min-height: 420px;
+        }
+
+        .carousel-slide {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25), transparent 45%);
+        }
+
+        .carousel-slide-1 {
+            background: linear-gradient(135deg, #846651 0%, #b08b74 50%, #ffece8 100%);
+        }
+
+        .carousel-slide-2 {
+            background: linear-gradient(135deg, #6b5442 0%, #846651 50%, #d8bfa8 100%);
+        }
+
+        .carousel-slide-3 {
+            background: linear-gradient(135deg, #9b775f 0%, #c49a7d 55%, #fff3ed 100%);
+        }
+
+        .carousel-copy {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+
+        .carousel-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #fff;
+            line-height: 1.1;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .carousel-subtitle {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.15rem;
+            margin-top: 1rem;
+            margin-bottom: 1.75rem;
+            max-width: 560px;
+        }
+
+        .home-carousel .carousel-indicators [data-bs-target] {
+            width: 36px;
+            height: 5px;
+            border-radius: 12px;
+        }
+
+        .home-carousel .carousel-control-prev,
+        .home-carousel .carousel-control-next {
+            width: 7%;
+        }
+
+        .home-carousel .carousel-control-prev-icon,
+        .home-carousel .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+            background-size: 60% 60%;
         }
         
         .hero-content {
@@ -356,6 +451,24 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .carousel-hero {
+                padding-top: 78px;
+            }
+
+            .home-carousel .carousel-item {
+                height: 62vh;
+                min-height: 360px;
+            }
+
+            .carousel-title {
+                font-size: 2.8rem;
+            }
+
+            .carousel-subtitle {
+                font-size: 1rem;
+            }
+
         }
         
         /* Cart Badge */
@@ -391,8 +504,12 @@
     <nav class="navbar navbar-expand-lg navbar-glass">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="/img/2.png" alt="Logo" style="height: 45px; margin-right: 10px;">
-                Estilo Feminino
+                <img class="brand-logo"
+                     th:src="@{/img/2.png}"
+                     src="/img/2.png"
+                     alt=""
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="brand-text-fallback">Estilo Feminino</span>
             </a>
             
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -412,7 +529,7 @@
                 <!-- Search -->
                 <form class="d-flex me-3" action="/produtos" method="get">
                     <div class="input-group">
-                        <input class="form-control bg-transparent border-0 text-white" type="search" name="busca" 
+                        <input class="form-control bg-transparent border-0 navbar-search-input" type="search" name="busca" 
                                placeholder="Buscar produtos..." style="backdrop-filter: blur(10px);">
                         <button class="btn btn-glass" type="submit">
                             <i class="fas fa-search"></i>
@@ -450,32 +567,70 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="floating-element floating-1"></div>
-        <div class="floating-element floating-2"></div>
-        <div class="floating-element floating-3"></div>
-        
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1 class="hero-title" style="font-family: 'Dancing Script', cursive;">Estilo<br><span style="background: var(--secondary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Feminino</span></h1>
-                    <p class="hero-subtitle">Descubra as últimas tendências da moda feminina com qualidade premium e estilo único. Sua beleza merece o melhor.</p>
-                    <div class="hero-cta">
-                        <a href="/produtos" class="btn btn-gradient btn-lg me-3">
-                            <i class="fas fa-shopping-bag me-2"></i>Explorar Coleção
-                        </a>
-                        <a href="#categorias" class="btn btn-glass btn-lg">
-                            <i class="fas fa-arrow-down me-2"></i>Ver Categorias
-                        </a>
+    <!-- Hero Carousel -->
+    <section class="carousel-hero">
+        <div id="homeCarousel" class="carousel slide home-carousel" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-slide carousel-slide-1">
+                        <div class="container">
+                            <div class="carousel-copy">
+                                <h1 class="carousel-title">Colecao Nova<br>Estilo Feminino</h1>
+                                <p class="carousel-subtitle">Descubra looks exclusivos para todas as ocasiões com caimento perfeito e acabamento premium.</p>
+                                <a href="/produtos" class="btn btn-light btn-lg me-2">
+                                    <i class="fas fa-shopping-bag me-2"></i>Ver Colecao
+                                </a>
+                                <a href="#categorias" class="btn btn-glass btn-lg">
+                                    <i class="fas fa-arrow-down me-2"></i>Categorias
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <div class="position-relative">
-                        <i class="fas fa-female" style="font-size: 300px; color: rgba(255,255,255,0.1);"></i>
+
+                <div class="carousel-item">
+                    <div class="carousel-slide carousel-slide-2">
+                        <div class="container">
+                            <div class="carousel-copy">
+                                <h2 class="carousel-title">Moda Fitness<br>com Elegancia</h2>
+                                <p class="carousel-subtitle">Pecas com conforto e performance para treinar, caminhar e manter seu estilo todos os dias.</p>
+                                <a href="/produtos?busca=fitness" class="btn btn-light btn-lg">
+                                    <i class="fas fa-dumbbell me-2"></i>Explorar Fitness
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-slide carousel-slide-3">
+                        <div class="container">
+                            <div class="carousel-copy">
+                                <h2 class="carousel-title">Acessorios e<br>Calcados em Destaque</h2>
+                                <p class="carousel-subtitle">Combine bolsas, joias e calcados para criar producoes completas com personalidade.</p>
+                                <a href="/produtos" class="btn btn-light btn-lg">
+                                    <i class="fas fa-gem me-2"></i>Comprar Agora
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 

@@ -12,16 +12,16 @@ endobj
 << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>
 endobj
 5 0 obj
-<< /Length 2822 >>
+<< /Length 3266 >>
 stream
 0.5 w
 50 50 495 742 re S
 50 770 495 22 re S
 450 770 m 450 792 l S
-BT /F1 14 Tf 220 775 Td (NOTA FISCAL) Tj ET
-BT /F2 8 Tf 465 782 Td (NF-e) Tj ET
-BT /F2 7 Tf 455 773 Td (No 00000003) Tj ET
-BT /F2 7 Tf 455 765 Td (SERIE 001) Tj ET
+BT /F1 14 Tf 200 775 Td (NOTA FISCAL) Tj ET
+BT /F2 8 Tf 480 782 Td (NF-e) Tj ET
+BT /F2 7 Tf 455 774 Td (No 00000003) Tj ET
+BT /F2 7 Tf 455 766 Td (SERIE 001) Tj ET
 50 770 m 545 770 l S
 50 750 m 545 750 l S
 BT /F1 9 Tf 55 735 Td (EMITENTE) Tj ET
@@ -32,11 +32,11 @@ BT /F2 6 Tf 320 735 Td (CHAVE DE ACESSO) Tj ET
 BT /F2 7 Tf 320 725 Td (00000000000000000000000000000000000370370367) Tj ET
 50 695 m 545 695 l S
 BT /F1 9 Tf 55 680 Td (DESTINATARIO / REMETENTE) Tj ET
-BT /F2 8 Tf 55 667 Td (NOME/RAZAO SOCIAL: adminteste) Tj ET
-BT /F2 7 Tf 55 657 Td (ENDERECO: Garanhus) Tj ET
+BT /F2 8 Tf 55 667 Td (NOME/RAZAO SOCIAL: Cliente Teste) Tj ET
+BT /F2 7 Tf 55 657 Td (ENDERECO: Av. Paulista, 1000 - São Paulo) Tj ET
 50 645 m 545 645 l S
 BT /F2 7 Tf 55 635 Td (DATA DE EMISSAO) Tj ET
-BT /F1 8 Tf 55 625 Td (04/12/2025 21:31) Tj ET
+BT /F1 8 Tf 55 625 Td (16/12/2025 17:57) Tj ET
 200 635 m 200 615 l S
 BT /F2 7 Tf 205 635 Td (PROTOCOLO DE AUTORIZACAO) Tj ET
 BT /F1 8 Tf 205 625 Td (000000002999997) Tj ET
@@ -69,30 +69,44 @@ BT /F1 7 Tf 455 578 Td (VL TOTAL) Tj ET
 450 580 m 450 565 l S
 545 580 m 545 565 l S
 BT /F2 7 Tf 55 568 Td (001) Tj ET
-BT /F2 7 Tf 85 568 Td (Camisa) Tj ET
-BT /F2 7 Tf 310 568 Td (1) Tj ET
+BT /F2 7 Tf 85 568 Td (Batom Matte Longa Duração) Tj ET
+BT /F2 7 Tf 310 568 Td (2) Tj ET
 BT /F2 7 Tf 345 568 Td (UN) Tj ET
-BT /F2 7 Tf 395 568 Td (29.90) Tj ET
-BT /F2 7 Tf 455 568 Td (29.90) Tj ET
+BT /F2 7 Tf 395 568 Td (24.90) Tj ET
+BT /F2 7 Tf 455 568 Td (49.80) Tj ET
 50 550 m 545 550 l S
-50 530 m 545 530 l S
+50 565 m 50 550 l S
+80 565 m 80 550 l S
+300 565 m 300 550 l S
+340 565 m 340 550 l S
+390 565 m 390 550 l S
+450 565 m 450 550 l S
+545 565 m 545 550 l S
+BT /F2 7 Tf 55 553 Td (002) Tj ET
+BT /F2 7 Tf 85 553 Td (Legging Fitness Estampada) Tj ET
+BT /F2 7 Tf 310 553 Td (7) Tj ET
+BT /F2 7 Tf 345 553 Td (UN) Tj ET
+BT /F2 7 Tf 395 553 Td (59.90) Tj ET
+BT /F2 7 Tf 455 553 Td (419.30) Tj ET
+50 535 m 545 535 l S
+50 515 m 545 515 l S
 0.9 0.9 0.9 rg
-50 510 495 20 re f
+50 495 495 20 re f
 0 0 0 rg
-BT /F1 10 Tf 55 515 Td (VALOR TOTAL DOS PRODUTOS) Tj ET
-BT /F1 11 Tf 450 515 Td (R$ 29.90) Tj ET
-50 510 m 545 510 l S
-50 490 m 545 490 l S
-BT /F1 8 Tf 55 478 Td (INFORMACOES COMPLEMENTARES) Tj ET
-BT /F2 7 Tf 55 466 Td (Pedido: #3 | Status: ENTREGUE) Tj ET
-BT /F2 7 Tf 55 454 Td (Data de Geracao: 09/12/2025 15:25) Tj ET
-BT /F2 7 Tf 55 442 Td (Forma de Pagamento: A Vista) Tj ET
-BT /F2 7 Tf 55 430 Td (Observacoes: Produto entregue conforme solicitado.) Tj ET
-BT /F2 7 Tf 55 418 Td (Garantia: 90 dias conforme Codigo de Defesa do Consumidor) Tj ET
-BT /F2 7 Tf 55 406 Td (SAC: 0800-123-4567 | Email: sac@ecommerce.com.br) Tj ET
-50 390 m 545 390 l S
-BT /F2 6 Tf 55 380 Td (Documento emitido por computador. Valido sem assinatura.) Tj ET
-BT /F2 6 Tf 380 380 Td (www.ecommerce.com.br) Tj ET
+BT /F1 10 Tf 55 500 Td (VALOR TOTAL DOS PRODUTOS) Tj ET
+BT /F1 11 Tf 450 500 Td (R$ 475.65) Tj ET
+50 495 m 545 495 l S
+50 475 m 545 475 l S
+BT /F1 8 Tf 55 463 Td (INFORMACOES COMPLEMENTARES) Tj ET
+BT /F2 7 Tf 55 451 Td (Pedido: #3 | Status: ENTREGUE) Tj ET
+BT /F2 7 Tf 55 439 Td (Data de Geracao: 01/06/2026 20:26) Tj ET
+BT /F2 7 Tf 55 427 Td (Forma de Pagamento: PIX) Tj ET
+BT /F2 7 Tf 55 415 Td (Observacoes: Produto entregue conforme solicitado.) Tj ET
+BT /F2 7 Tf 55 403 Td (Garantia: 90 dias conforme Codigo de Defesa do Consumidor) Tj ET
+BT /F2 7 Tf 55 391 Td (SAC: 0800-123-4567 | Email: sac@ecommerce.com.br) Tj ET
+50 375 m 545 375 l S
+BT /F2 6 Tf 55 365 Td (Documento emitido por computador. Valido sem assinatura.) Tj ET
+BT /F2 6 Tf 380 365 Td (www.ecommerce.com.br) Tj ET
 
 endstream
 endobj
@@ -107,5 +121,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-3249
+3693
 %%EOF

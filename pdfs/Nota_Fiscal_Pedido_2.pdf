@@ -12,88 +12,293 @@ endobj
 << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>
 endobj
 5 0 obj
-<< /Length 700 >>
+<< /Length 9992 >>
 stream
-BT
-/F1 18 Tf
-200 750 Td
-(NOTA FISCAL) Tj
-ET
-BT
-/F1 12 Tf
-50 700 Td
-(Pedido #2) Tj
-ET
-BT
-/F2 10 Tf
-50 680 Td
-(Data: 04/12/2025 21:27) Tj
-ET
-BT
-/F2 10 Tf
-50 665 Td
-(Cliente: adminteste) Tj
-ET
-BT
-/F2 10 Tf
-50 650 Td
-(Endereco: null) Tj
-ET
-BT
-/F2 10 Tf
-50 635 Td
-(Status: ENTREGUE) Tj
-ET
-BT
-/F1 10 Tf
-50 600 Td
-(Produto) Tj
-ET
-BT
-/F1 10 Tf
-300 600 Td
-(Qtd) Tj
-ET
-BT
-/F1 10 Tf
-350 600 Td
-(Preco) Tj
-ET
-BT
-/F1 10 Tf
-450 600 Td
-(Subtotal) Tj
-ET
-BT
-/F2 9 Tf
-50 580 Td
-(Camisa) Tj
-ET
-BT
-/F2 9 Tf
-300 580 Td
-(2) Tj
-ET
-BT
-/F2 9 Tf
-350 580 Td
-(R$ 29.90) Tj
-ET
-BT
-/F2 9 Tf
-450 580 Td
-(R$ 59.80) Tj
-ET
-BT
-/F1 12 Tf
-400 545 Td
-(TOTAL: R$ 59.80) Tj
-ET
-BT
-/F2 8 Tf
-200 50 Td
-(Data de Geracao: 09/12/2025 15:15) Tj
-ET
+0.8 w
+1 J
+1 j
+24 768 547 48 re S
+476 816 m 476 768 l S
+24 792 m 476 792 l S
+BT /F2 7 Tf 1 0 0 1 28 805 Tm (RECEBEMOS DE E-COMMERCE LTDA OS PRODUTOS CONSTANTES DA NOTA FISCAL INDICADA AO LADO) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 781 Tm (DATA DE RECEBIMENTO) Tj ET
+BT /F2 7 Tf 1 0 0 1 134 781 Tm (IDENTIFICACAO E ASSINATURA DO RECEBEDOR) Tj ET
+BT /F1 12 Tf 1 0 0 1 512 798 Tm (NF-e) Tj ET
+BT /F1 12 Tf 1 0 0 1 498 784 Tm (No 000002) Tj ET
+BT /F2 9 Tf 1 0 0 1 508 772 Tm (Serie 1) Tj ET
+[3 3] 0 d
+24 760 m 571 760 l S
+[] 0 d
+24 650 547 102 re S
+162 752 m 162 650 l S
+316 752 m 316 650 l S
+BT /F1 11 Tf 1 0 0 1 34 730 Tm (E-COMMERCE LTDA) Tj ET
+BT /F2 8 Tf 1 0 0 1 34 715 Tm (CNPJ 12.345.678/0001-90) Tj ET
+BT /F2 8 Tf 1 0 0 1 34 702 Tm (RUA DO COMERCIO, 123 - CENTRO) Tj ET
+BT /F2 8 Tf 1 0 0 1 34 689 Tm (SAO PAULO - SP) Tj ET
+BT /F2 8 Tf 1 0 0 1 34 676 Tm (www.ecommerce.com.br) Tj ET
+BT /F1 14 Tf 1 0 0 1 222 734 Tm (DANFE) Tj ET
+BT /F2 9 Tf 1 0 0 1 194 720 Tm (Documento Auxiliar da) Tj ET
+BT /F2 9 Tf 1 0 0 1 191 708 Tm (Nota Fiscal Eletronica) Tj ET
+BT /F2 8 Tf 1 0 0 1 170 695 Tm (0 - ENTRADA) Tj ET
+BT /F2 8 Tf 1 0 0 1 170 683 Tm (1 - SAIDA) Tj ET
+290 678 20 20 re S
+BT /F1 10 Tf 1 0 0 1 298 691 Tm (1) Tj ET
+BT /F1 13 Tf 1 0 0 1 170 664 Tm (N 000002) Tj ET
+BT /F2 9 Tf 1 0 0 1 170 652 Tm (SERIE 1 FOLHA 1/1) Tj ET
+BT /F2 8 Tf 1 0 0 1 324 739 Tm (Controle do Fisco) Tj ET
+324 668 239 52 re S
+326 671 1 46 re f
+328 671 2 46 re f
+331 671 2 46 re f
+334 671 1 46 re f
+336 671 2 46 re f
+339 671 1 46 re f
+341 671 2 46 re f
+345 671 1 42 re f
+347 671 2 46 re f
+350 671 1 46 re f
+353 671 2 46 re f
+356 671 1 42 re f
+358 671 1 42 re f
+361 671 1 42 re f
+364 671 1 42 re f
+367 671 2 46 re f
+370 671 2 46 re f
+374 671 1 42 re f
+377 671 2 46 re f
+381 671 2 46 re f
+384 671 2 46 re f
+387 671 2 46 re f
+390 671 1 42 re f
+393 671 1 42 re f
+396 671 2 46 re f
+399 671 1 42 re f
+402 671 1 42 re f
+405 671 1 42 re f
+408 671 1 42 re f
+411 671 1 42 re f
+414 671 1 42 re f
+417 671 1 42 re f
+420 671 1 42 re f
+423 671 1 46 re f
+425 671 2 46 re f
+428 671 1 46 re f
+430 671 2 46 re f
+433 671 1 46 re f
+435 671 2 46 re f
+438 671 1 46 re f
+441 671 2 46 re f
+444 671 1 42 re f
+447 671 2 46 re f
+450 671 2 46 re f
+454 671 1 46 re f
+456 671 2 46 re f
+459 671 2 46 re f
+462 671 1 46 re f
+464 671 2 46 re f
+467 671 1 46 re f
+469 671 2 46 re f
+473 671 1 42 re f
+475 671 2 46 re f
+478 671 1 46 re f
+481 671 2 46 re f
+484 671 1 42 re f
+486 671 1 42 re f
+489 671 1 42 re f
+492 671 1 42 re f
+495 671 2 46 re f
+498 671 2 46 re f
+502 671 1 42 re f
+505 671 2 46 re f
+509 671 2 46 re f
+512 671 2 46 re f
+515 671 2 46 re f
+518 671 1 42 re f
+521 671 1 42 re f
+524 671 2 46 re f
+527 671 1 42 re f
+530 671 1 42 re f
+533 671 1 42 re f
+536 671 1 42 re f
+539 671 1 42 re f
+542 671 1 42 re f
+545 671 1 42 re f
+548 671 1 42 re f
+551 671 1 46 re f
+553 671 2 46 re f
+556 671 1 46 re f
+558 671 2 46 re f
+24 580 547 62 re S
+24 618 m 571 618 l S
+379 642 m 379 618 l S
+119 618 m 119 580 l S
+249 618 m 249 580 l S
+329 618 m 329 580 l S
+BT /F2 7 Tf 1 0 0 1 28 632 Tm (Natureza da operacao) Tj ET
+BT /F2 9 Tf 1 0 0 1 28 621 Tm (Venda de mercadorias) Tj ET
+BT /F2 7 Tf 1 0 0 1 384 632 Tm (Protocolo de autorizacao de uso da NF-e) Tj ET
+BT /F1 9 Tf 1 0 0 1 384 621 Tm (000000005502446) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 609 Tm (Inscricao Estadual) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 597 Tm (123456789) Tj ET
+BT /F2 7 Tf 1 0 0 1 124 609 Tm (Insc. Est. Subst. Trib.) Tj ET
+BT /F2 8 Tf 1 0 0 1 124 597 Tm (--) Tj ET
+BT /F2 7 Tf 1 0 0 1 254 609 Tm (CNPJ) Tj ET
+BT /F2 8 Tf 1 0 0 1 254 597 Tm (12.345.678/0001-90) Tj ET
+BT /F2 7 Tf 1 0 0 1 334 609 Tm (Chave de acesso da NF-e) Tj ET
+BT /F1 8 Tf 1 0 0 1 334 597 Tm (2512 1234 5678 0001 9035 5500 1000 0000 0212 7276 5059) Tj ET
+24 468 547 104 re S
+24 558 m 571 558 l S
+24 540 m 571 540 l S
+24 522 m 571 522 l S
+24 504 m 571 504 l S
+24 486 m 571 486 l S
+BT /F1 9 Tf 1 0 0 1 28 561 Tm (Destinatario / Remetente) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 545 Tm (Nome / Razao Social: Administrador) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 527 Tm (CPF/CNPJ: 11111111111 Inscricao Estadual: ISENTO) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 509 Tm (Endereco: Rua das Flores, 123) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 491 Tm (Municipio: Sao Paulo UF: SP CEP: 01234-567) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 473 Tm (Data emissao: 16/12/2025 Hora emissao: 17:47:30 Fone/Fax: 11999999999) Tj ET
+24 418 547 44 re S
+24 448 m 571 448 l S
+24 432 m 571 432 l S
+160 448 m 160 418 l S
+297 448 m 297 418 l S
+434 448 m 434 418 l S
+BT /F1 9 Tf 1 0 0 1 28 451 Tm (Faturas) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 436 Tm (Numero) Tj ET
+BT /F2 8 Tf 1 0 0 1 164 436 Tm (Vencimento) Tj ET
+BT /F2 8 Tf 1 0 0 1 301 436 Tm (Valor) Tj ET
+BT /F2 8 Tf 1 0 0 1 438 436 Tm (Forma Pagto) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 422 Tm (000002/1) Tj ET
+BT /F2 8 Tf 1 0 0 1 164 422 Tm (23/12/2025) Tj ET
+BT /F2 8 Tf 1 0 0 1 301 422 Tm (210,22) Tj ET
+BT /F2 8 Tf 1 0 0 1 438 422 Tm (PIX) Tj ET
+24 354 547 58 re S
+24 398 m 571 398 l S
+24 382 m 571 382 l S
+115 398 m 115 354 l S
+206 398 m 206 354 l S
+297 398 m 297 354 l S
+388 398 m 388 354 l S
+479 398 m 479 354 l S
+BT /F1 9 Tf 1 0 0 1 28 401 Tm (Calculo do imposto) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 386 Tm (Base calc. ICMS) Tj ET
+BT /F2 7 Tf 1 0 0 1 119 386 Tm (Valor do ICMS) Tj ET
+BT /F2 7 Tf 1 0 0 1 210 386 Tm (Base calc. ICMS ST) Tj ET
+BT /F2 7 Tf 1 0 0 1 301 386 Tm (Valor ICMS ST) Tj ET
+BT /F2 7 Tf 1 0 0 1 392 386 Tm (Valor IPI) Tj ET
+BT /F2 7 Tf 1 0 0 1 483 386 Tm (Valor total produtos) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 369 Tm (210,22) Tj ET
+BT /F2 8 Tf 1 0 0 1 119 369 Tm (0,00) Tj ET
+BT /F2 8 Tf 1 0 0 1 210 369 Tm (0,00) Tj ET
+BT /F2 8 Tf 1 0 0 1 301 369 Tm (0,00) Tj ET
+BT /F2 8 Tf 1 0 0 1 392 369 Tm (0,00) Tj ET
+BT /F2 8 Tf 1 0 0 1 483 369 Tm (189,70) Tj ET
+24 276 547 72 re S
+24 334 m 571 334 l S
+24 318 m 571 318 l S
+24 300 m 571 300 l S
+289 334 m 289 276 l S
+362 334 m 362 276 l S
+450 334 m 450 276 l S
+504 334 m 504 276 l S
+BT /F1 9 Tf 1 0 0 1 28 337 Tm (Transportador / Volumes transportados) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 322 Tm (Nome) Tj ET
+BT /F2 7 Tf 1 0 0 1 293 322 Tm (Frete por conta) Tj ET
+BT /F2 7 Tf 1 0 0 1 366 322 Tm (Codigo ANTT) Tj ET
+BT /F2 7 Tf 1 0 0 1 454 322 Tm (Placa do veiculo) Tj ET
+BT /F2 7 Tf 1 0 0 1 508 322 Tm (UF) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 305 Tm (TRANSPORTADORA PADRAO) Tj ET
+BT /F2 8 Tf 1 0 0 1 293 305 Tm (1-Emitente) Tj ET
+BT /F2 8 Tf 1 0 0 1 366 305 Tm (--) Tj ET
+BT /F2 8 Tf 1 0 0 1 454 305 Tm (AAA0A00) Tj ET
+BT /F2 8 Tf 1 0 0 1 508 305 Tm (SP) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 288 Tm (Quantidade) Tj ET
+BT /F2 7 Tf 1 0 0 1 129 288 Tm (Especie) Tj ET
+BT /F2 7 Tf 1 0 0 1 239 288 Tm (Marca) Tj ET
+BT /F2 7 Tf 1 0 0 1 354 288 Tm (Numeracao) Tj ET
+BT /F2 7 Tf 1 0 0 1 459 288 Tm (Peso bruto) Tj ET
+BT /F2 7 Tf 1 0 0 1 534 288 Tm (Peso liquido) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 278 Tm (3) Tj ET
+BT /F2 8 Tf 1 0 0 1 129 278 Tm (VOLUMES) Tj ET
+BT /F2 8 Tf 1 0 0 1 239 278 Tm (CAIXAS) Tj ET
+BT /F2 8 Tf 1 0 0 1 459 278 Tm (210,22) Tj ET
+BT /F2 8 Tf 1 0 0 1 534 278 Tm (210,22) Tj ET
+24 136 547 134 re S
+24 256 m 571 256 l S
+24 240 m 571 240 l S
+60 256 m 60 136 l S
+269 256 m 269 136 l S
+312 256 m 312 136 l S
+348 256 m 348 136 l S
+384 256 m 384 136 l S
+414 256 m 414 136 l S
+449 256 m 449 136 l S
+500 256 m 500 136 l S
+550 256 m 550 136 l S
+BT /F1 9 Tf 1 0 0 1 28 259 Tm (Itens da nota fiscal) Tj ET
+BT /F2 7 Tf 1 0 0 1 27 244 Tm (Codigo) Tj ET
+BT /F2 7 Tf 1 0 0 1 63 244 Tm (Descricao do produto/servico) Tj ET
+BT /F2 7 Tf 1 0 0 1 272 244 Tm (NCM/SH) Tj ET
+BT /F2 7 Tf 1 0 0 1 315 244 Tm (CST) Tj ET
+BT /F2 7 Tf 1 0 0 1 351 244 Tm (CFOP) Tj ET
+BT /F2 7 Tf 1 0 0 1 387 244 Tm (UN) Tj ET
+BT /F2 7 Tf 1 0 0 1 417 244 Tm (Qtde) Tj ET
+BT /F2 7 Tf 1 0 0 1 452 244 Tm (Preco un) Tj ET
+BT /F2 7 Tf 1 0 0 1 503 244 Tm (Preco total) Tj ET
+24 222 m 571 222 l S
+BT /F2 7 Tf 1 0 0 1 28 228 Tm (001) Tj ET
+BT /F2 7 Tf 1 0 0 1 63 228 Tm (Blusa Feminina Basica) Tj ET
+BT /F2 7 Tf 1 0 0 1 272 228 Tm (00000000) Tj ET
+BT /F2 7 Tf 1 0 0 1 315 228 Tm (000) Tj ET
+BT /F2 7 Tf 1 0 0 1 351 228 Tm (5.102) Tj ET
+BT /F2 7 Tf 1 0 0 1 387 228 Tm (UN) Tj ET
+BT /F2 7 Tf 1 0 0 1 417 228 Tm (2) Tj ET
+BT /F2 7 Tf 1 0 0 1 452 228 Tm (49,90) Tj ET
+BT /F2 7 Tf 1 0 0 1 503 228 Tm (99,80) Tj ET
+24 204 m 571 204 l S
+BT /F2 7 Tf 1 0 0 1 28 210 Tm (002) Tj ET
+BT /F2 7 Tf 1 0 0 1 63 210 Tm (Vestido Floral Midi) Tj ET
+BT /F2 7 Tf 1 0 0 1 272 210 Tm (00000000) Tj ET
+BT /F2 7 Tf 1 0 0 1 315 210 Tm (000) Tj ET
+BT /F2 7 Tf 1 0 0 1 351 210 Tm (5.102) Tj ET
+BT /F2 7 Tf 1 0 0 1 387 210 Tm (UN) Tj ET
+BT /F2 7 Tf 1 0 0 1 417 210 Tm (1) Tj ET
+BT /F2 7 Tf 1 0 0 1 452 210 Tm (89,90) Tj ET
+BT /F2 7 Tf 1 0 0 1 503 210 Tm (89,90) Tj ET
+24 186 m 571 186 l S
+24 168 m 571 168 l S
+24 150 m 571 150 l S
+24 90 547 40 re S
+24 116 m 571 116 l S
+24 102 m 571 102 l S
+206 116 m 206 90 l S
+388 116 m 388 90 l S
+BT /F1 9 Tf 1 0 0 1 28 119 Tm (Calculo do ISSQN) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 106 Tm (Inscricao Municipal) Tj ET
+BT /F2 7 Tf 1 0 0 1 210 106 Tm (Valor total dos servicos) Tj ET
+BT /F2 7 Tf 1 0 0 1 392 106 Tm (Base de calculo do ISSQN) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 93 Tm (--) Tj ET
+BT /F2 8 Tf 1 0 0 1 210 93 Tm (0,00) Tj ET
+BT /F2 8 Tf 1 0 0 1 392 93 Tm (0,00) Tj ET
+24 -6 547 90 re S
+24 70 m 571 70 l S
+379 70 m 379 -6 l S
+BT /F1 9 Tf 1 0 0 1 28 73 Tm (Dados adicionais) Tj ET
+BT /F2 8 Tf 1 0 0 1 28 58 Tm (Informacoes complementares:) Tj ET
+BT /F2 7 Tf 1 0 0 1 30 46 Tm (Pedido #2 - Documento auxiliar para conferencia interna.) Tj ET
+BT /F2 7 Tf 1 0 0 1 30 35 Tm (Total produtos: R$ 189,70 | Frete: R$ 0,00) Tj ET
+BT /F2 7 Tf 1 0 0 1 30 24 Tm (Valor total da nota: R$ 210,22) Tj ET
+BT /F2 7 Tf 1 0 0 1 30 13 Tm (Forma de pagamento: PIX) Tj ET
+BT /F2 7 Tf 1 0 0 1 30 2 Tm (Gerado em: 01/06/2026 20:42:22) Tj ET
+BT /F2 8 Tf 1 0 0 1 383 58 Tm (Reservado ao Fisco) Tj ET
+BT /F2 7 Tf 1 0 0 1 383 44 Tm (Sem observacoes fiscais.) Tj ET
+BT /F2 7 Tf 1 0 0 1 28 -16 Tm (Obtenha o arquivo digital em www.ecommerce.com.br/nfe) Tj ET
+1 0 0 rg
+BT /F1 8 Tf 1 0 0 1 198 -16 Tm (AMBIENTE DE HOMOLOGACAO - DOCUMENTO SEM VALOR FISCAL) Tj ET
+0 0 0 rg
+BT /F2 7 Tf 1 0 0 1 451 -16 Tm (01/06/2026 20:42:22) Tj ET
 
 endstream
 endobj
@@ -108,5 +313,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1126
+10419
 %%EOF

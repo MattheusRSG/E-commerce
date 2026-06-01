@@ -10,7 +10,8 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -141,12 +142,10 @@
             margin-bottom: 0.5rem;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
-        
         .brand-title {
-            font-family: 'Kalam', cursive;
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4rem;
+            font-weight: 600;
             color: #846651;
             margin-bottom: 0.5rem;
             text-shadow: 0 2px 10px rgba(132, 102, 81, 0.3);
@@ -209,13 +208,13 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4);
+            box-shadow: 0 10px 30px rgba(132, 102, 81, 0.35);
             width: 100%;
         }
         
         .btn-gradient:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.6);
+            box-shadow: 0 15px 40px rgba(132, 102, 81, 0.5);
             color: white;
         }
         
@@ -378,7 +377,7 @@
             <!-- Header -->
             <div class="login-header">
                 <div class="brand-logo">
-                    <img src="/img/2.png" alt="Logo" style="height: 80px;">
+                    <img th:src="@{/img/2.png}" src="/img/2.png" alt="" style="height: 80px;">
                 </div>
                 <h1 class="brand-title">Estilo Feminino</h1>
                 <p class="brand-subtitle">Faça login para continuar sua jornada</p>

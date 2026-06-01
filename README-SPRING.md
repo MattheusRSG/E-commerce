@@ -12,7 +12,7 @@ O projeto foi **migrado com sucesso** de Java SE + Swing para **Spring Boot + Th
 - **Spring Data JPA** para acesso ao banco
 - **Thymeleaf** para templates web
 - **Bootstrap 5** para interface moderna
-- **PostgreSQL** (mesma configuração anterior)
+- **PostgreSQL** com configuração centralizada
 - **Entidades JPA** com validações
 - **Repositórios Spring Data**
 - **Controllers web** com sessão
@@ -32,9 +32,9 @@ mvn spring-boot:run
 - Execute a classe `ECommerceApp.java`
 
 ### 3. Acesso
-- **URL**: http://localhost:8080/ecommerce
+- **URL**: http://localhost:8080
 - **Porta**: 8080
-- **Context Path**: /ecommerce
+- **Context Path**: /
 
 ## 👥 Usuários Padrão
 
@@ -50,9 +50,15 @@ mvn spring-boot:run
 
 - **Tipo**: PostgreSQL
 - **Host**: localhost:5432
-- **Database**: ecommerce
-- **Usuário**: postgres
-- **Senha**: 1234
+- **Database (padrão)**: estilo_feminino
+- **Usuário (padrão)**: postgres
+- **Senha (padrão)**: 010203040506070809
+
+Configuração em `src/main/resources/application.properties`:
+
+- `spring.datasource.url=${DB_URL:jdbc:postgresql://localhost:5432/estilo_feminino}`
+- `spring.datasource.username=${DB_USER:postgres}`
+- `spring.datasource.password=${DB_PASSWORD:010203040506070809}`
 
 > ⚠️ **Importante**: O banco será criado automaticamente pelo Hibernate (DDL auto-update)
 
@@ -60,7 +66,7 @@ mvn spring-boot:run
 
 ```
 src/main/java/com/ecommerce/
-├── entity/          # Entidades JPA (User, Product, Order, OrderItem)
+├── entity/          # Entidades JPA (Usuario, Produto, Pedido, ItemPedido)
 ├── repository/      # Repositórios Spring Data
 ├── controller/      # Controllers web
 ├── service/         # Serviços de negócio

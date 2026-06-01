@@ -1,6 +1,6 @@
 package com.ecommerce.util;
 
-import com.ecommerce.entity.User;
+import com.ecommerce.entity.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,13 +14,13 @@ import java.util.logging.Level;
 public final class SessionManager {
     
     private static final Logger LOGGER = Logger.getLogger(SessionManager.class.getName());
-    private static final String URL = "jdbc:postgresql://localhost:5432/ecommerce";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "Matheus@9192";
+    private static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:postgresql://localhost:5432/estilo_feminino");
+    private static final String USER = System.getenv().getOrDefault("DB_USER", "postgres");
+    private static final String PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "010203040506070809");
     private static final String DRIVER = "org.postgresql.Driver";
     
     private static volatile SessionManager instance;
-    private static User currentUser;
+    private static Usuario currentUser;
     
     private SessionManager() {
         // Singleton - construtor privado
@@ -37,26 +37,26 @@ public final class SessionManager {
         return instance;
     }
     
-    public User getCurrentUser() {
+    public Usuario getCurrentUser() {
         return currentUser;
     }
     
-    public void setCurrentUser(User user) {
+    public void setCurrentUser(Usuario user) {
         currentUser = user;
-        LOGGER.info("Usuário logado: " + (user != null ? user.getUsername() : "null"));
+        LOGGER.info("Usuário logado: " + (user != null ? user.getLogin() : "null"));
     }
     
-    public void login(User user) {
+    public void login(Usuario user) {
         setCurrentUser(user);
     }
     
     public void logout() {
-        LOGGER.info("Logout do usuário: " + (currentUser != null ? currentUser.getUsername() : "null"));
+        LOGGER.info("Logout do usuário: " + (currentUser != null ? currentUser.getLogin() : "null"));
         currentUser = null;
     }
     
     public boolean isAdmin() {
-        return currentUser != null && currentUser.getTipoUsuario() == User.TipoUsuario.ADMIN;
+        return currentUser != null && currentUser.getTipoUsuario() == Usuario.TipoUsuario.ADMIN;
     }
     
     public boolean isLoggedIn() {

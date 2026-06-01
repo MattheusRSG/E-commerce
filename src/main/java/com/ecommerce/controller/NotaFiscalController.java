@@ -85,6 +85,14 @@ public class NotaFiscalController {
         // Criar usuário simplificado
         Order.SimpleUser user = new Order.SimpleUser();
         user.setNomeCompleto(pedido.getUsuario().getNome());
+        user.setCpf(pedido.getUsuario().getCpf());
+        user.setTelefone(pedido.getUsuario().getTelefone());
+        user.setLogradouro(pedido.getUsuario().getLogradouro());
+        user.setNumero(pedido.getUsuario().getNumero());
+        user.setComplemento(pedido.getUsuario().getComplemento());
+        user.setCidade(pedido.getUsuario().getCidade());
+        user.setEstado(pedido.getUsuario().getEstado());
+        user.setCep(pedido.getUsuario().getCep());
         order.setUser(user);
         
         // Converter itens
