@@ -14,9 +14,15 @@ import java.util.logging.Level;
 public final class SessionManager {
     
     private static final Logger LOGGER = Logger.getLogger(SessionManager.class.getName());
-    private static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:postgresql://localhost:5432/estilo_feminino");
-    private static final String USER = System.getenv().getOrDefault("DB_USER", "postgres");
-    private static final String PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "010203040506070809");
+    private static final String URL = System.getenv().getOrDefault(
+        "SUPABASE_DB_URL",
+        "jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&prepareThreshold=0"
+    );
+    private static final String USER = System.getenv().getOrDefault(
+        "SUPABASE_DB_USER",
+        "postgres.uqkzrlgtqvffxwcnfazy"
+    );
+    private static final String PASSWORD = System.getenv().getOrDefault("SUPABASE_DB_PASSWORD", "Estilo1q2w3e@");
     private static final String DRIVER = "org.postgresql.Driver";
     
     private static volatile SessionManager instance;

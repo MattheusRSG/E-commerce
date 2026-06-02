@@ -7,36 +7,22 @@
 - Verificar: `java -version` e `javac -version`
 - Download: https://www.oracle.com/java/technologies/downloads/
 
-### 2. PostgreSQL
-- **PostgreSQL 12 ou superior** instalado e rodando
-- Porta padrão: **5432**
-- Download: https://www.postgresql.org/download/
+### 2. Banco de dados
+- O projeto agora usa o PostgreSQL hospedado no **Supabase**
+- Não é necessário instalar PostgreSQL local para rodar a versão Spring Boot
 
 ## ⚙️ Configuração do Banco de Dados
 
-### 1. Criar o Banco
-```sql
--- Conectar no PostgreSQL como superuser
-CREATE DATABASE estilo_feminino;
-```
-
-### 2. Configurar Usuário (se necessário)
-```sql
--- Criar usuário (opcional)
-CREATE USER postgres WITH PASSWORD '010203040506070809';
-GRANT ALL PRIVILEGES ON DATABASE estilo_feminino TO postgres;
-```
-
-### 3. Verificar Configurações
+### 1. Verificar Configurações
 No arquivo `src/main/resources/application.properties`, as configurações padrão são:
-- **URL:** `jdbc:postgresql://localhost:5432/estilo_feminino`
-- **Usuário:** `postgres`
-- **Senha:** `010203040506070809`
+- **URL:** `jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&prepareThreshold=0`
+- **Usuário:** `postgres.uqkzrlgtqvffxwcnfazy`
+- **Senha:** senha do banco no Supabase
 
-Também é possível sobrescrever por variável de ambiente:
-- `DB_URL`
-- `DB_USER`
-- `DB_PASSWORD`
+Se for necessário sobrescrever a conexão direta usada pelo `SessionManager`, use:
+- `SUPABASE_DB_URL`
+- `SUPABASE_DB_USER`
+- `SUPABASE_DB_PASSWORD`
 
 ## 🔧 Executar o Projeto
 
@@ -92,9 +78,9 @@ Projeto-e-commerce/
 ## 🐛 Solução de Problemas
 
 ### Erro de Conexão com Banco
-1. Verificar se PostgreSQL está rodando
-2. Confirmar usuário/senha no `application.properties` ou variáveis `DB_*`
-3. Verificar se o banco `estilo_feminino` existe
+1. Confirmar se o projeto do Supabase está ativo
+2. Confirmar usuário/senha no `application.properties`
+3. Verificar se a URL termina com `?sslmode=require`
 
 ### Erro de Compilação
 1. Verificar se JDK está instalado

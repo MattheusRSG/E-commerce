@@ -49,18 +49,18 @@ mvn spring-boot:run
 ## 🗄️ Banco de Dados
 
 - **Tipo**: PostgreSQL
-- **Host**: localhost:5432
-- **Database (padrão)**: estilo_feminino
-- **Usuário (padrão)**: postgres
-- **Senha (padrão)**: 010203040506070809
+- **Hospedagem**: Supabase
+- **Host**: aws-1-us-east-1.pooler.supabase.com:6543
+- **Database**: postgres
+- **Usuário**: postgres.uqkzrlgtqvffxwcnfazy
 
 Configuração em `src/main/resources/application.properties`:
 
-- `spring.datasource.url=${DB_URL:jdbc:postgresql://localhost:5432/estilo_feminino}`
-- `spring.datasource.username=${DB_USER:postgres}`
-- `spring.datasource.password=${DB_PASSWORD:010203040506070809}`
+- `spring.datasource.url=jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&prepareThreshold=0`
+- `spring.datasource.username=postgres.uqkzrlgtqvffxwcnfazy`
+- `spring.datasource.password=<senha do banco Supabase>`
 
-> ⚠️ **Importante**: O banco será criado automaticamente pelo Hibernate (DDL auto-update)
+> ⚠️ **Importante**: Todos que usarem essa configuração acessam o mesmo banco online do Supabase.
 
 ## 📁 Nova Estrutura
 
