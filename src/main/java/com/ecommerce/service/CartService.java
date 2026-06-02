@@ -3,12 +3,11 @@ package com.ecommerce.service;
 import com.ecommerce.model.CartItem;
 import com.ecommerce.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import jakarta.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.util.*;
 
-@Service
+@Deprecated
 public class CartService {
     
     @Autowired

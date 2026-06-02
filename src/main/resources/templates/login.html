@@ -292,6 +292,12 @@
             color: #ff6b7a;
             backdrop-filter: blur(10px);
         }
+
+        .alert-success {
+            background: rgba(25, 135, 84, 0.1);
+            border-color: rgba(25, 135, 84, 0.3);
+            color: #198754;
+        }
         
         /* Back Link */
         .back-link {
@@ -391,6 +397,12 @@
                     <span th:text="${erro}"></span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
+
+                <div th:if="${sucesso}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span th:text="${sucesso}"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
                 
                 <form action="/login" method="post">
                     <input type="hidden" name="redirect" th:value="${param.redirect}">
@@ -411,7 +423,12 @@
                         <i class="fas fa-sign-in-alt me-2"></i>Entrar
                     </button>
                 </form>
-                
+
+                <div class="text-center mt-3">
+                    <a href="/register" class="btn-glass">
+                        <i class="fas fa-user-plus me-2"></i>Criar conta
+                    </a>
+                </div>
 
                 
                 <!-- Back Link -->

@@ -1,10 +1,9 @@
 package com.ecommerce.service;
 
 import com.ecommerce.model.SimpleUser;
-import org.springframework.stereotype.Service;
 import java.util.*;
 
-@Service
+@Deprecated
 public class SimpleUserService {
     
     private final Map<String, SimpleUser> users = new HashMap<>();

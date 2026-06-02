@@ -1,12 +1,11 @@
 package com.ecommerce.service;
 
 import com.ecommerce.model.Product;
-import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Service
+@Deprecated
 public class ProductService {
     
     private final Map<Long, Product> products = new HashMap<>();
