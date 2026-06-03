@@ -14,10 +14,25 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Component
 @Order(1)
 public class DataInitializer implements CommandLineRunner {
+
+    private static final Map<String, String> IMAGENS_PRODUTOS = Map.ofEntries(
+        Map.entry("Blusa Feminina Básica", "/img/Blusa_Feminina_Básica.webp"),
+        Map.entry("Top Fitness com Bojo", "/img/Top_fitness_com_Bojo.webp"),
+        Map.entry("Legging Fitness Estampada", "/img/leg_fitness.jpg"),
+        Map.entry("Shorts Fitness Cintura Alta", "/img/Shorts_Fitness_cintura_alta.jpg"),
+        Map.entry("Bolsa Feminina Grande", "/img/Bolsa_Feminina_Grande.webp"),
+        Map.entry("Colar Dourado Delicado", "/img/Colar_Dourado_Delicado.jpg"),
+        Map.entry("Sutiã com Bojo Renda", "/img/sutiã_bojo_renda.jpg"),
+        Map.entry("Calcinha Fio Dental Renda", "/img/calcinha_fio_dental_renda.jpg"),
+        Map.entry("Conjunto Lingerie Luxo", "/img/lingerie.jpg"),
+        Map.entry("Base Líquida Cobertura Natural", "/img/Base_Líquida_Cobertura_Natural.jpg"),
+        Map.entry("Rímel à Prova D'água", "/img/Rimel_á_prova_D´_agua.webp")
+    );
 
     @Autowired
     private CategoriaRepository categoriaRepository;
@@ -37,6 +52,8 @@ public class DataInitializer implements CommandLineRunner {
         if (produtoRepository.count() == 0) {
             criarProdutos();
         }
+
+        atualizarImagensProdutos();
         
         criarUsuarios();
     }
@@ -66,7 +83,7 @@ public class DataInitializer implements CommandLineRunner {
             blusa.setEstoqueMinimo(5);
             blusa.setTamanhos("P,M,G,GG");
             blusa.setCores("Branco,Preto,Rosa,Azul");
-            blusa.setUrlImagem("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop");
+            blusa.setUrlImagem(IMAGENS_PRODUTOS.get("Blusa Feminina Básica"));
             
             Produto vestido = new Produto("Vestido Floral Midi", "Vestido midi com estampa floral, perfeito para o verão", 
                 new BigDecimal("89.90"), 30, vestuario);
@@ -93,21 +110,21 @@ public class DataInitializer implements CommandLineRunner {
             top.setEstoqueMinimo(10);
             top.setTamanhos("P,M,G,GG");
             top.setCores("Preto,Rosa,Roxo,Verde");
-            top.setUrlImagem("https://images.unsplash.com/photo-1506629905607-d9c297d3d45b?w=300&h=300&fit=crop");
+            top.setUrlImagem(IMAGENS_PRODUTOS.get("Top Fitness com Bojo"));
             
             Produto legging = new Produto("Legging Fitness Estampada", "Legging com estampa exclusiva e tecido anti-suor", 
                 new BigDecimal("59.90"), 45, fitness);
             legging.setEstoqueMinimo(8);
             legging.setTamanhos("P,M,G,GG");
             legging.setCores("Estampa Floral,Estampa Geométrica,Lisa Preta");
-            legging.setUrlImagem("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop");
+            legging.setUrlImagem(IMAGENS_PRODUTOS.get("Legging Fitness Estampada"));
             
             Produto shorts = new Produto("Shorts Fitness Cintura Alta", "Shorts esportivo com cintura alta e tecido respirável", 
                 new BigDecimal("34.90"), 55, fitness);
             shorts.setEstoqueMinimo(10);
             shorts.setTamanhos("P,M,G,GG");
             shorts.setCores("Preto,Cinza,Rosa,Azul");
-            shorts.setUrlImagem("https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=300&h=300&fit=crop");
+            shorts.setUrlImagem(IMAGENS_PRODUTOS.get("Shorts Fitness Cintura Alta"));
             
             produtoRepository.saveAll(Arrays.asList(top, legging, shorts));
         }
@@ -140,14 +157,14 @@ public class DataInitializer implements CommandLineRunner {
             bolsa.setEstoqueMinimo(3);
             bolsa.setTamanhos("Único");
             bolsa.setCores("Camel,Preto,Marrom");
-            bolsa.setUrlImagem("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop");
+            bolsa.setUrlImagem(IMAGENS_PRODUTOS.get("Bolsa Feminina Grande"));
             
             Produto colar = new Produto("Colar Dourado Delicado", "Colar feminino dourado com pingente coração", 
                 new BigDecimal("29.90"), 50, acessorios);
             colar.setEstoqueMinimo(10);
             colar.setTamanhos("Único");
             colar.setCores("Dourado,Prateado");
-            colar.setUrlImagem("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=300&h=300&fit=crop");
+            colar.setUrlImagem(IMAGENS_PRODUTOS.get("Colar Dourado Delicado"));
             
             Produto oculos = new Produto("Óculos de Sol Feminino", "Óculos de sol com proteção UV e design moderno", 
                 new BigDecimal("89.90"), 30, acessorios);
@@ -174,21 +191,21 @@ public class DataInitializer implements CommandLineRunner {
             sutia.setEstoqueMinimo(8);
             sutia.setTamanhos("36,38,40,42,44");
             sutia.setCores("Preto,Branco,Nude,Vermelho");
-            sutia.setUrlImagem("https://images.unsplash.com/photo-1544441893-675973e31985?w=300&h=300&fit=crop");
+            sutia.setUrlImagem(IMAGENS_PRODUTOS.get("Sutiã com Bojo Renda"));
             
             Produto calcinha = new Produto("Calcinha Fio Dental Renda", "Calcinha fio dental com renda delicada e confortável", 
                 new BigDecimal("19.90"), 60, modaIntima);
             calcinha.setEstoqueMinimo(12);
             calcinha.setTamanhos("P,M,G,GG");
             calcinha.setCores("Preto,Branco,Rosa,Nude");
-            calcinha.setUrlImagem("https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=300&fit=crop");
+            calcinha.setUrlImagem(IMAGENS_PRODUTOS.get("Calcinha Fio Dental Renda"));
             
             Produto conjunto = new Produto("Conjunto Lingerie Luxo", "Conjunto completo de lingerie com renda francesa", 
                 new BigDecimal("79.90"), 25, modaIntima);
             conjunto.setEstoqueMinimo(5);
             conjunto.setTamanhos("P,M,G,GG");
             conjunto.setCores("Preto,Vermelho,Azul Marinho");
-            conjunto.setUrlImagem("https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=300&fit=crop");
+            conjunto.setUrlImagem(IMAGENS_PRODUTOS.get("Conjunto Lingerie Luxo"));
             
             produtoRepository.saveAll(Arrays.asList(sutia, calcinha, conjunto));
         }
@@ -208,7 +225,7 @@ public class DataInitializer implements CommandLineRunner {
             base.setEstoqueMinimo(10);
             base.setTamanhos("Único");
             base.setCores("Bege Claro,Bege Médio,Bege Escuro,Morena Clara,Morena Escura");
-            base.setUrlImagem("https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop");
+            base.setUrlImagem(IMAGENS_PRODUTOS.get("Base Líquida Cobertura Natural"));
             
             Produto paleta = new Produto("Paleta de Sombras Nude", "Paleta com 12 tons nude para looks naturais e sofisticados", 
                 new BigDecimal("49.90"), 40, maquiagem);
@@ -222,12 +239,33 @@ public class DataInitializer implements CommandLineRunner {
             rimel.setEstoqueMinimo(15);
             rimel.setTamanhos("Único");
             rimel.setCores("Preto,Marrom");
-            rimel.setUrlImagem("https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=300&fit=crop");
+            rimel.setUrlImagem(IMAGENS_PRODUTOS.get("Rímel à Prova D'água"));
             
             produtoRepository.saveAll(Arrays.asList(batom, base, paleta, rimel));
         }
 
         System.out.println("✅ Produtos criados com sucesso");
+    }
+
+    private void atualizarImagensProdutos() {
+        int produtosAtualizados = 0;
+
+        for (Produto produto : produtoRepository.findAll()) {
+            if (produto.getNome() == null) {
+                continue;
+            }
+
+            String urlImagem = IMAGENS_PRODUTOS.get(produto.getNome());
+            if (urlImagem != null && !urlImagem.equals(produto.getUrlImagem())) {
+                produto.setUrlImagem(urlImagem);
+                produtoRepository.save(produto);
+                produtosAtualizados++;
+            }
+        }
+
+        if (produtosAtualizados > 0) {
+            System.out.println("✅ " + produtosAtualizados + " imagens de produtos atualizadas");
+        }
     }
 
     private void criarUsuarios() {

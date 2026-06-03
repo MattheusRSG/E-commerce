@@ -22,7 +22,7 @@ public final class SessionManager {
         "SUPABASE_DB_USER",
         "postgres.uqkzrlgtqvffxwcnfazy"
     );
-    private static final String PASSWORD = System.getenv().getOrDefault("SUPABASE_DB_PASSWORD", "Estilo1q2w3e@");
+    private static final String PASSWORD = System.getenv("SUPABASE_DB_PASSWORD");
     private static final String DRIVER = "org.postgresql.Driver";
     
     private static volatile SessionManager instance;
