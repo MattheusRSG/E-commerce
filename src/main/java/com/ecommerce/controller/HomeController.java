@@ -39,7 +39,7 @@ public class HomeController {
                           Model model, HttpSession session) {
         List<Categoria> categorias = categoriaRepository.findAll();
         List<Produto> produtos;
-        
+
         if (categoria != null) {
             produtos = produtoRepository.findByCategoria_IdCategoria(categoria);
         } else if (busca != null && !busca.trim().isEmpty()) {

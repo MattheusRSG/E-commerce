@@ -50,15 +50,15 @@ mvn spring-boot:run
 
 - **Tipo**: PostgreSQL
 - **Hospedagem**: Supabase
-- **Host**: aws-1-us-east-1.pooler.supabase.com:6543
 - **Database**: postgres
-- **Usuário**: postgres.uqkzrlgtqvffxwcnfazy
+- **Conexão recomendada**: Transaction Pooler do Supabase
 
-Configuração em `src/main/resources/application.properties`:
+Configure por variáveis de ambiente:
 
-- `spring.datasource.url=jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&prepareThreshold=0`
-- `spring.datasource.username=postgres.uqkzrlgtqvffxwcnfazy`
-- `spring.datasource.password=<senha do banco Supabase>`
+- `SPRING_PROFILES_ACTIVE=supabase`
+- `SUPABASE_DB_URL=jdbc:postgresql://SEU_HOST_POOLER:6543/postgres?sslmode=require&prepareThreshold=0`
+- `SUPABASE_DB_USER=postgres.SEU_PROJECT_REF`
+- `SUPABASE_DB_PASSWORD=<senha do banco Supabase>`
 
 > ⚠️ **Importante**: Todos que usarem essa configuração acessam o mesmo banco online do Supabase.
 

@@ -14,15 +14,14 @@
 ## ⚙️ Configuração do Banco de Dados
 
 ### 1. Verificar Configurações
-No arquivo `src/main/resources/application.properties`, as configurações padrão são:
-- **URL:** `jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&prepareThreshold=0`
-- **Usuário:** `postgres.uqkzrlgtqvffxwcnfazy`
-- **Senha:** senha do banco no Supabase
+O profile padrão é `supabase`, então configure as variáveis abaixo antes de rodar com o banco remoto.
+Pegue a URL em **Supabase > Project Settings > Database > Connection string > Transaction pooler**.
 
-Se for necessário sobrescrever a conexão direta usada pelo `SessionManager`, use:
 - `SUPABASE_DB_URL`
 - `SUPABASE_DB_USER`
 - `SUPABASE_DB_PASSWORD`
+
+Para testar sem Supabase, rode com `SPRING_PROFILES_ACTIVE=local`.
 
 ## 🔧 Executar o Projeto
 
