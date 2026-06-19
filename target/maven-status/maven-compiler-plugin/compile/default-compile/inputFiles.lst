@@ -1,38 +1,44 @@
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\QRCodeReal.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\DebugController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\QRCodeGenerator.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Produto.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\model\SimpleUser.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\config\DataInitializer.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\ECommerceApp.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\CarrinhoController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Pagamento.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\OrderRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\DatabaseInitializer.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\OrderItem.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Usuario.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Categoria.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\UsuarioRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\ProductController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\User.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\TestController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\HomeController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\SessionManager.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\CartItem.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\ProdutoRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\model\Product.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Pedido.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Product.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\model\CartItem.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\UserRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\CategoriaRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\ItemPedido.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\service\CarrinhoService.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\entity\Order.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\PDFGenerator.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\util\PixQRCode.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\controller\UserController.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\repository\ProductRepository.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\service\CartService.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\service\ProductService.java
-C:\Users\User\OneDrive - União Brasileira de Educação Católica – UBEC\Área de Trabalho\Projeto-e-commerce\Projeto-e-commerce\src\main\java\com\ecommerce\service\SimpleUserService.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Produto.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\PedidoRepository.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Categoria.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\DatabaseInitializer.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\PagamentoRepository.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\PDFGenerator.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\service\CartService.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\NotaFiscalController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\PixQRCode.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\ProductController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\TestController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\QRCodeGenerator.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\PedidoController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\model\Product.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\DebugController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\service\CarrinhoService.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Pedido.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\AdminController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\CategoriaRepository.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\OrderItem.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\QRCodeReal.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\CategoryManagementController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\ECommerceApp.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\ProdutoRepository.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\util\SessionManager.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\config\DataInitializer.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\HomeController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\CheckoutController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\AdminCategoryController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\UserController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\model\SimpleUser.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\ItemPedidoRepository.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\AcompanharPedidoController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Order.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\model\CartItem.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\service\ProductService.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\AdminProductController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\ErrorController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\ItemPedido.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Pagamento.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\service\SimpleUserService.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\controller\CarrinhoController.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\entity\Usuario.java
+C:\Users\Matheus\E-commerce\src\main\java\com\ecommerce\repository\UsuarioRepository.java

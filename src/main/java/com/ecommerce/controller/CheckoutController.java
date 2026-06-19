@@ -5,6 +5,7 @@ import com.ecommerce.repository.*;
 import com.ecommerce.service.CarrinhoService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/checkout")
@@ -39,6 +41,26 @@ public class CheckoutController {
         model.addAttribute("usuario", usuario);
         
         return "checkout";
+    }
+
+    @GetMapping("/frete")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> calcularFretePorCep(@RequestParam String cep,
+                                                                   @RequestParam(required = false) String uf) {
+        String cepLimpo = cep == null ? "" : cep.replaceAll("\\D", "");
+        if (!cepLimpo.matches("\\d{8}")) {
+            return ResponseEntity.badRequest().body(Map.of("erro", "CEP inválido."));
+        }
+
+        String ufResolvida = isBlank(uf) ? inferirUfPorCep(cepLimpo) : uf.trim().toUpperCase();
+        BigDecimal valor = calcularFretePorUf(ufResolvida);
+
+        return ResponseEntity.ok(Map.of(
+            "cep", formatarCep(cepLimpo),
+            "uf", ufResolvida,
+            "valor", valor,
+            "prazoDias", calcularPrazoEntrega(ufResolvida)
+        ));
     }
 
     @Autowired
@@ -102,6 +124,11 @@ public class CheckoutController {
                 redirectAttributes.addFlashAttribute("erro", "Número do cartão inválido!");
                 return "redirect:/checkout";
             }
+
+            if (isCartaoSandboxRecusado(numeroCartaoLimpo)) {
+                redirectAttributes.addFlashAttribute("erro", "Pagamento recusado pelo sandbox. Use outro cartão ou forma de pagamento.");
+                return "redirect:/checkout";
+            }
         }
         
         try {
@@ -133,7 +160,7 @@ public class CheckoutController {
             pedido.setStatusPedido(Pedido.StatusPedido.AGUARDANDO);
             
             BigDecimal total = carrinhoService.getTotal(session);
-            BigDecimal frete = calcularFrete(uf);
+            BigDecimal frete = calcularFretePorUf(uf);
             BigDecimal desconto = "PIX".equals(tipoPagamentoNormalizado) ? total.multiply(new BigDecimal("0.05")) : BigDecimal.ZERO;
             
             pedido.setValorFrete(frete);
@@ -168,6 +195,8 @@ public class CheckoutController {
             
             if (tipoPagamentoEnum == Pagamento.TipoPagamento.CARTAO) {
                 pagamento.setCartaoUltimosDigitos(numeroCartaoLimpo.substring(numeroCartaoLimpo.length() - 4));
+                pagamento.setStatusPagamento(Pagamento.StatusPagamento.APROVADO);
+                pagamento.setDataPagamento(LocalDateTime.now());
             }
             
             pagamentoRepository.save(pagamento);
@@ -183,8 +212,8 @@ public class CheckoutController {
         }
     }
     
-    private BigDecimal calcularFrete(String uf) {
-        return switch (uf) {
+    private BigDecimal calcularFretePorUf(String uf) {
+        return switch (uf == null ? "" : uf.trim().toUpperCase()) {
             case "SP" -> new BigDecimal("15.00");
             case "RJ" -> new BigDecimal("18.00");
             case "MG" -> new BigDecimal("20.00");
@@ -193,6 +222,46 @@ public class CheckoutController {
             case "SC" -> new BigDecimal("24.00");
             default -> new BigDecimal("30.00");
         };
+    }
+
+    private int calcularPrazoEntrega(String uf) {
+        return switch (uf == null ? "" : uf.trim().toUpperCase()) {
+            case "SP" -> 2;
+            case "RJ", "MG" -> 3;
+            case "PR", "SC", "RS" -> 5;
+            default -> 7;
+        };
+    }
+
+    private String inferirUfPorCep(String cepLimpo) {
+        int prefixo = Integer.parseInt(cepLimpo.substring(0, 2));
+        if (prefixo <= 19) {
+            return "SP";
+        }
+        if (prefixo <= 28) {
+            return "RJ";
+        }
+        if (prefixo <= 39) {
+            return "MG";
+        }
+        if (prefixo >= 80 && prefixo <= 87) {
+            return "PR";
+        }
+        if (prefixo >= 88 && prefixo <= 89) {
+            return "SC";
+        }
+        if (prefixo >= 90) {
+            return "RS";
+        }
+        return "OUTROS";
+    }
+
+    private String formatarCep(String cepLimpo) {
+        return cepLimpo.substring(0, 5) + "-" + cepLimpo.substring(5);
+    }
+
+    private boolean isCartaoSandboxRecusado(String numeroCartaoLimpo) {
+        return "4000000000000002".equals(numeroCartaoLimpo);
     }
 
     private void atualizarEnderecoUsuario(Usuario usuario, String cep, String endereco, String cidade, String uf, String complemento) {
@@ -205,5 +274,9 @@ public class CheckoutController {
 
     private String limpar(String valor) {
         return valor == null ? null : valor.trim();
+    }
+
+    private boolean isBlank(String valor) {
+        return valor == null || valor.trim().isEmpty();
     }
 }

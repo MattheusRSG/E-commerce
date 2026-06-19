@@ -2,6 +2,8 @@ package com.ecommerce.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/admin")
 public class AdminController {
 
+    private static final Logger log = LoggerFactory.getLogger(AdminController.class);
+
     @Autowired
     private PedidoRepository pedidoRepository;
     
@@ -45,6 +49,7 @@ public class AdminController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/dashboard", usuario);
             return "redirect:/login";
         }
         
@@ -75,6 +80,7 @@ public class AdminController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/pedidos", usuario);
             return "redirect:/login";
         }
         
@@ -100,6 +106,7 @@ public class AdminController {
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
             System.out.println("ERRO: Acesso negado!");
+            registrarAcessoNegado("/admin/pedidos/" + id + "/status", usuario);
             redirectAttributes.addFlashAttribute("erro", "Acesso negado!");
             return "redirect:/login";
         }
@@ -153,6 +160,7 @@ public class AdminController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/pagamentos/" + id + "/status", usuario);
             redirectAttributes.addFlashAttribute("erro", "Acesso negado!");
             return "redirect:/login";
         }
@@ -171,5 +179,10 @@ public class AdminController {
         }
         
         return "redirect:/admin/pedidos";
+    }
+
+    private void registrarAcessoNegado(String rota, Usuario usuario) {
+        String login = usuario == null ? "anonimo" : usuario.getLogin();
+        log.warn("Acesso administrativo negado: rota={} usuario={}", rota, login);
     }
 }

@@ -3,6 +3,8 @@ package com.ecommerce.controller;
 import com.ecommerce.entity.*;
 import com.ecommerce.repository.*;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin")
 public class AdminProductController {
+
+    private static final Logger log = LoggerFactory.getLogger(AdminProductController.class);
 
     @GetMapping("/test")
     public String test() {
@@ -37,6 +41,7 @@ public class AdminProductController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos", usuario);
             return "redirect:/login";
         }
         
@@ -51,6 +56,7 @@ public class AdminProductController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos/novo", usuario);
             return "redirect:/login";
         }
         
@@ -71,7 +77,14 @@ public class AdminProductController {
                                @RequestParam(required = false) String tamanhos,
                                @RequestParam(required = false) String cores,
                                @RequestParam(required = false) String urlImagem,
+                               HttpSession session,
                                RedirectAttributes redirectAttributes) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos/salvar", usuario);
+            redirectAttributes.addFlashAttribute("erro", "Acesso negado!");
+            return "redirect:/login";
+        }
         
         try {
             Categoria categoria = categoriaRepository.findById(categoriaId).orElse(null);
@@ -106,6 +119,7 @@ public class AdminProductController {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos/editar/" + id, usuario);
             return "redirect:/login";
         }
         
@@ -132,7 +146,14 @@ public class AdminProductController {
                                   @RequestParam(required = false) String tamanhos,
                                   @RequestParam(required = false) String cores,
                                   @RequestParam(required = false) String urlImagem,
+                                  HttpSession session,
                                   RedirectAttributes redirectAttributes) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos/atualizar/" + id, usuario);
+            redirectAttributes.addFlashAttribute("erro", "Acesso negado!");
+            return "redirect:/login";
+        }
         
         try {
             Produto produto = produtoRepository.findById(id).orElse(null);
@@ -168,7 +189,14 @@ public class AdminProductController {
     }
 
     @PostMapping("/produtos/excluir/{id}")
-    public String excluirProduto(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String excluirProduto(@PathVariable Long id, HttpSession session, RedirectAttributes redirectAttributes) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        if (usuario == null || usuario.getTipoUsuario() != Usuario.TipoUsuario.ADMIN) {
+            registrarAcessoNegado("/admin/produtos/excluir/" + id, usuario);
+            redirectAttributes.addFlashAttribute("erro", "Acesso negado!");
+            return "redirect:/login";
+        }
+
         try {
             Produto produto = produtoRepository.findById(id).orElse(null);
             if (produto == null) {
@@ -186,4 +214,8 @@ public class AdminProductController {
         return "redirect:/admin/produtos";
     }
 
+    private void registrarAcessoNegado(String rota, Usuario usuario) {
+        String login = usuario == null ? "anonimo" : usuario.getLogin();
+        log.warn("Acesso administrativo negado: rota={} usuario={}", rota, login);
+    }
 }

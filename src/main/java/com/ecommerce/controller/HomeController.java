@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Controller
@@ -36,6 +37,8 @@ public class HomeController {
     @GetMapping("/produtos")
     public String produtos(@RequestParam(required = false) Long categoria,
                           @RequestParam(required = false) String busca,
+                          @RequestParam(required = false) BigDecimal precoMin,
+                          @RequestParam(required = false) BigDecimal precoMax,
                           Model model, HttpSession session) {
         List<Categoria> categorias = categoriaRepository.findAll();
         List<Produto> produtos;
@@ -47,6 +50,18 @@ public class HomeController {
         } else {
             produtos = produtoRepository.findAll();
         }
+
+        if (precoMin != null) {
+            produtos = produtos.stream()
+                .filter(produto -> produto.getPrecoUnitario().compareTo(precoMin) >= 0)
+                .toList();
+        }
+
+        if (precoMax != null) {
+            produtos = produtos.stream()
+                .filter(produto -> produto.getPrecoUnitario().compareTo(precoMax) <= 0)
+                .toList();
+        }
         
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         boolean isAdmin = usuario != null && usuario.getTipoUsuario() == Usuario.TipoUsuario.ADMIN;
@@ -55,6 +70,8 @@ public class HomeController {
         model.addAttribute("produtos", produtos);
         model.addAttribute("categoriaSelecionada", categoria);
         model.addAttribute("busca", busca);
+        model.addAttribute("precoMin", precoMin);
+        model.addAttribute("precoMax", precoMax);
         model.addAttribute("isAdmin", isAdmin);
         return "produtos";
     }

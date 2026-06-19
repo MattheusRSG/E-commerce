@@ -217,22 +217,20 @@
                             document.getElementById('endereco').value = data.logradouro;
                             document.getElementById('cidade').value = data.localidade;
                             document.getElementById('uf').value = data.uf;
-                            calculateShipping(data.uf);
+                            calculateShipping(cep, data.uf);
                         }
                     });
             }
         });
 
-        function calculateShipping(uf) {
-            // Simulate shipping calculation
-            const shippingRates = {
-                'SP': 15.00, 'RJ': 18.00, 'MG': 20.00, 'RS': 25.00,
-                'PR': 22.00, 'SC': 24.00, 'GO': 28.00, 'DF': 25.00
-            };
-            
-            freteValue = shippingRates[uf] || 30.00;
-            document.getElementById('frete').textContent = 'R$ ' + freteValue.toFixed(2);
-            updateTotal();
+        function calculateShipping(cep, uf) {
+            fetch(`/checkout/frete?cep=${cep}&uf=${uf}`)
+                .then(response => response.json())
+                .then(data => {
+                    freteValue = parseFloat(data.valor);
+                    document.getElementById('frete').textContent = 'R$ ' + freteValue.toFixed(2);
+                    updateTotal();
+                });
         }
 
         function updateTotal() {

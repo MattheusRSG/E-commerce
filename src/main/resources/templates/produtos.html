@@ -523,6 +523,16 @@
                                     <input type="text" class="form-control" name="busca" th:value="${busca}" 
                                            placeholder="Digite o nome do produto...">
                                 </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" name="precoMin" th:value="${precoMin}" 
+                                               min="0" step="0.01" placeholder="Preço mín.">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" name="precoMax" th:value="${precoMax}" 
+                                               min="0" step="0.01" placeholder="Preço máx.">
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-gradient w-100">
                                     <i class="fas fa-search me-2"></i>Buscar
                                 </button>
