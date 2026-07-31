@@ -1,14 +1,16 @@
 package com.ecommerce.service;
 
-import com.ecommerce.entity.Produto;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.entity.Produto;
+
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class CarrinhoService {

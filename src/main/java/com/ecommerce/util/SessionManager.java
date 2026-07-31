@@ -1,11 +1,12 @@
 package com.ecommerce.util;
 
-import com.ecommerce.entity.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.ecommerce.entity.Usuario;
 
 /**
  * Gerenciador de sessão singleton para controle de usuários logados

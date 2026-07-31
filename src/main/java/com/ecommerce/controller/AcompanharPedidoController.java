@@ -1,14 +1,20 @@
 package com.ecommerce.controller;
 
-import com.ecommerce.entity.*;
-import com.ecommerce.repository.*;
-import jakarta.servlet.http.HttpSession;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.List;
+import com.ecommerce.entity.ItemPedido;
+import com.ecommerce.entity.Pedido;
+import com.ecommerce.entity.Usuario;
+import com.ecommerce.repository.ItemPedidoRepository;
+import com.ecommerce.repository.PedidoRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AcompanharPedidoController {

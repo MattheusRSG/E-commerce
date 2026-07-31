@@ -1,7 +1,6 @@
 package com.ecommerce.util;
 
 import java.math.BigDecimal;
-import java.util.zip.CRC32;
 
 public class PixQRCode {
     

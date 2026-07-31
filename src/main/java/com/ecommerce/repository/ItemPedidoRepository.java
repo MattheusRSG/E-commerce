@@ -1,11 +1,12 @@
 package com.ecommerce.repository;
 
-import com.ecommerce.entity.ItemPedido;
-import com.ecommerce.entity.Pedido;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.ecommerce.entity.ItemPedido;
+import com.ecommerce.entity.Pedido;
 
 @Repository
 public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Long> {

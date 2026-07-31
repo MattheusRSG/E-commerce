@@ -1,11 +1,16 @@
 package com.ecommerce.service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.ecommerce.model.CartItem;
 import com.ecommerce.model.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import jakarta.servlet.http.HttpSession;
-import java.math.BigDecimal;
-import java.util.*;
 
 @Deprecated
 public class CartService {

@@ -1,17 +1,25 @@
 package com.ecommerce.controller;
 
-import com.ecommerce.entity.*;
-import com.ecommerce.repository.*;
-import com.ecommerce.util.PDFGenerator;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecommerce.entity.ItemPedido;
+import com.ecommerce.entity.Order;
+import com.ecommerce.entity.OrderItem;
+import com.ecommerce.entity.Pedido;
+import com.ecommerce.entity.Usuario;
+import com.ecommerce.repository.PedidoRepository;
+import com.ecommerce.util.PDFGenerator;
+
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/nota-fiscal")

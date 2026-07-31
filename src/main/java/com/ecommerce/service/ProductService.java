@@ -1,9 +1,13 @@
 package com.ecommerce.service;
 
-import com.ecommerce.model.Product;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
+import com.ecommerce.model.Product;
 
 @Deprecated
 public class ProductService {

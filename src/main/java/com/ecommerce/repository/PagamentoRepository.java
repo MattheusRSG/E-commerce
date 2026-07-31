@@ -1,11 +1,12 @@
 package com.ecommerce.repository;
 
-import com.ecommerce.entity.Pagamento;
-import com.ecommerce.entity.Pedido;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import com.ecommerce.entity.Pagamento;
+import com.ecommerce.entity.Pedido;
 
 @Repository
 public interface PagamentoRepository extends JpaRepository<Pagamento, Long> {

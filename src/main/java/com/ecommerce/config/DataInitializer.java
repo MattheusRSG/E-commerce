@@ -1,20 +1,21 @@
 package com.ecommerce.config;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 import com.ecommerce.entity.Categoria;
 import com.ecommerce.entity.Produto;
 import com.ecommerce.entity.Usuario;
 import com.ecommerce.repository.CategoriaRepository;
 import com.ecommerce.repository.ProdutoRepository;
 import com.ecommerce.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 @Component
 @Order(1)
