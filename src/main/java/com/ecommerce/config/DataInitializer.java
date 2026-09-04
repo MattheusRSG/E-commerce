@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.ecommerce.entity.Categoria;
@@ -44,6 +45,9 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public void run(String... args) throws Exception {
         if (categoriaRepository.count() == 0) {
@@ -55,8 +59,10 @@ public class DataInitializer implements CommandLineRunner {
         }
 
         atualizarImagensProdutos();
-        
+
         criarUsuarios();
+
+        migrarSenhasEmTextoPuro();
     }
 
     private void criarCategorias() {
@@ -272,7 +278,8 @@ public class DataInitializer implements CommandLineRunner {
     private void criarUsuarios() {
         // Verificar se admin já existe
         if (usuarioRepository.findByLogin("admin").isEmpty()) {
-            Usuario admin = new Usuario("Administrador", "admin@estilofeminino.com", "admin", "admin123");
+            Usuario admin = new Usuario("Administrador", "admin@estilofeminino.com", "admin",
+                passwordEncoder.encode("admin123"));
             admin.setTipoUsuario(Usuario.TipoUsuario.ADMIN);
             admin.setTelefone("11999999999");
             admin.setCep("01234-567");
@@ -287,7 +294,8 @@ public class DataInitializer implements CommandLineRunner {
         
         // Verificar se cliente já existe
         if (usuarioRepository.findByLogin("cliente").isEmpty()) {
-            Usuario cliente = new Usuario("Cliente Teste", "cliente@teste.com", "cliente", "123456");
+            Usuario cliente = new Usuario("Cliente Teste", "cliente@teste.com", "cliente",
+                passwordEncoder.encode("123456"));
             cliente.setTipoUsuario(Usuario.TipoUsuario.CLIENTE);
             cliente.setTelefone("11888888888");
             cliente.setCep("04567-890");
@@ -299,6 +307,29 @@ public class DataInitializer implements CommandLineRunner {
             cliente.setCpf("22222222222");
             usuarioRepository.save(cliente);
             System.out.println("✅ Usuário CLIENTE criado: cliente/123456");
+        }
+    }
+
+    /**
+     * Converte para BCrypt as senhas que ficaram gravadas em texto puro por
+     * versões anteriores. Roda uma única vez por senha: depois de convertida ela
+     * já começa com o prefixo do BCrypt e passa a ser ignorada aqui.
+     */
+    private void migrarSenhasEmTextoPuro() {
+        int convertidas = 0;
+
+        for (Usuario usuario : usuarioRepository.findAll()) {
+            String senha = usuario.getSenha();
+
+            if (senha != null && !senha.isBlank() && !senha.startsWith("$2")) {
+                usuario.setSenha(passwordEncoder.encode(senha));
+                usuarioRepository.save(usuario);
+                convertidas++;
+            }
+        }
+
+        if (convertidas > 0) {
+            System.out.println("✅ " + convertidas + " senha(s) convertidas para BCrypt");
         }
     }
 }

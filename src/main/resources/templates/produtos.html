@@ -649,7 +649,7 @@
                                         </small>
                                     </div>
                                     
-                                    <form action="/carrinho/adicionar" method="post">
+                                    <form th:action="@{/carrinho/adicionar}" method="post">
                                         <input type="hidden" name="produtoId" th:value="${produto.idProduto}">
                                         
                                         <!-- Size Selection -->

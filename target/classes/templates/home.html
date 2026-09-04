@@ -839,7 +839,7 @@
                                       th:text="'R$ ' + ${#numbers.formatDecimal(produto.precoUnitario, 1, 2)}">R$ 0,00</span>
                                 <small class="text-muted" th:text="'Estoque: ' + ${produto.estoqueAtual}">Estoque: 0</small>
                             </div>
-                            <form action="/carrinho/adicionar" method="post" class="d-grid">
+                            <form th:action="@{/carrinho/adicionar}" method="post" class="d-grid">
                                 <input type="hidden" name="produtoId" th:value="${produto.idProduto}">
                                 <button type="submit" class="btn btn-gradient" th:disabled="${produto.estoqueAtual <= 0}">
                                     <i class="fas fa-cart-plus me-2"></i>

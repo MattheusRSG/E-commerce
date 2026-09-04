@@ -9,9 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * Classe principal da aplicação E-Commerce Spring Boot
  * Responsável pela inicialização do sistema web
  */
-@SpringBootApplication(exclude = {
-    org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
-})
+@SpringBootApplication
 @EnableJpaRepositories
 @EnableCaching
 public class ECommerceApp {

@@ -10,6 +10,7 @@ com\ecommerce\entity\Pedido$StatusPedido.class
 com\ecommerce\entity\OrderItem.class
 com\ecommerce\repository\CategoriaRepository.class
 com\ecommerce\service\CarrinhoService.class
+com\ecommerce\config\SecurityConfig.class
 com\ecommerce\entity\Order$SimpleUser.class
 com\ecommerce\entity\Pagamento.class
 com\ecommerce\util\PDFGenerator.class

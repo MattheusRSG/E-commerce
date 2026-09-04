@@ -533,7 +533,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-6">
-                                    <form action="/carrinho/atualizar" method="post">
+                                    <form th:action="@{/carrinho/atualizar}" method="post">
                                         <input type="hidden" name="produtoId" th:value="${item.produto.idProduto}">
                                         <div class="quantity-control">
                                             <button type="button" class="quantity-btn" onclick="decrementQuantity(this)">
@@ -554,7 +554,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-1 col-6 text-center">
-                                    <form action="/carrinho/remover" method="post" style="display: inline;">
+                                    <form th:action="@{/carrinho/remover}" method="post" style="display: inline;">
                                         <input type="hidden" name="produtoId" th:value="${item.produto.idProduto}">
                                         <button type="submit" class="btn btn-danger-gradient btn-sm" 
                                                 onclick="return confirm('Deseja remover este item?')">
@@ -571,7 +571,7 @@
                         <a href="/produtos" class="btn btn-glass btn-lg">
                             <i class="fas fa-arrow-left me-2"></i>Continuar Comprando
                         </a>
-                        <form action="/carrinho/limpar" method="post" style="display: inline;">
+                        <form th:action="@{/carrinho/limpar}" method="post" style="display: inline;">
                             <button type="submit" class="btn btn-danger-gradient btn-lg" 
                                     onclick="return confirm('Deseja limpar todo o carrinho?')">
                                 <i class="fas fa-trash me-2"></i>Limpar Carrinho

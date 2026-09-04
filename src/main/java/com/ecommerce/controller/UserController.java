@@ -3,6 +3,7 @@ package com.ecommerce.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ecommerce.entity.Usuario;
 import com.ecommerce.repository.UsuarioRepository;
+import com.ecommerce.service.CarrinhoService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -21,6 +24,9 @@ public class UserController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
     public String loginPage() {
@@ -61,7 +67,7 @@ public class UserController {
             return "redirect:/register";
         }
 
-        Usuario usuario = new Usuario(nome, email, login, senha);
+        Usuario usuario = new Usuario(nome, email, login, passwordEncoder.encode(senha));
         usuario.setTipoUsuario(Usuario.TipoUsuario.CLIENTE);
         usuario.setTelefone(limpar(form.getTelefone()));
         usuario.setLogradouro(limpar(form.getEndereco()));
@@ -76,23 +82,46 @@ public class UserController {
     public String login(@RequestParam String username,
                        @RequestParam String password,
                        @RequestParam(required = false) String redirect,
-                       HttpSession session,
+                       HttpServletRequest request,
                        RedirectAttributes redirectAttributes) {
-        
+
         Optional<Usuario> usuarioOpt = usuarioRepository.findByLogin(username);
-        
-        if (usuarioOpt.isPresent() && usuarioOpt.get().getSenha().equals(password)) {
-            session.setAttribute("usuario", usuarioOpt.get());
-            
-            if (redirect != null && !redirect.isEmpty() && !redirect.equals("null")) {
-                return "redirect:" + redirect;
-            }
-            
-            return "redirect:/";
-        } else {
+
+        if (usuarioOpt.isEmpty() || !passwordEncoder.matches(password, usuarioOpt.get().getSenha())) {
             redirectAttributes.addFlashAttribute("erro", "Usuário ou senha inválidos!");
             return "redirect:/login";
         }
+
+        HttpSession session = renovarSessao(request);
+        session.setAttribute("usuario", usuarioOpt.get());
+
+        if (redirect != null && !redirect.isEmpty() && !redirect.equals("null")) {
+            return "redirect:" + redirect;
+        }
+
+        return "redirect:/";
+    }
+
+    /**
+     * Troca o identificador da sessão no login, para que um id plantado no
+     * navegador antes da autenticação não continue valendo depois. O carrinho
+     * montado como visitante é transportado para a sessão nova.
+     */
+    private HttpSession renovarSessao(HttpServletRequest request) {
+        HttpSession sessaoAnterior = request.getSession(false);
+        Object carrinho = null;
+
+        if (sessaoAnterior != null) {
+            carrinho = sessaoAnterior.getAttribute(CarrinhoService.CARRINHO_SESSION);
+            sessaoAnterior.invalidate();
+        }
+
+        HttpSession sessaoNova = request.getSession(true);
+        if (carrinho != null) {
+            sessaoNova.setAttribute(CarrinhoService.CARRINHO_SESSION, carrinho);
+        }
+
+        return sessaoNova;
     }
 
     @GetMapping("/logout")

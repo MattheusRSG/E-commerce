@@ -406,7 +406,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
                 
-                <form action="/login" method="post">
+                <form th:action="@{/login}" method="post">
                     <input type="hidden" name="redirect" th:value="${param.redirect}">
                     
                     <div class="form-group">

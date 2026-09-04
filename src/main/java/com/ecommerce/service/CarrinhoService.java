@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 @Service
 public class CarrinhoService {
 
-    private static final String CARRINHO_SESSION = "carrinho";
+    public static final String CARRINHO_SESSION = "carrinho";
 
     public static class ItemCarrinho {
         private Produto produto;

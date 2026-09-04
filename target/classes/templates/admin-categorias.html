@@ -91,6 +91,8 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <form id="deleteForm" method="post" style="display: inline;">
+                        <!-- O action é definido por JavaScript, então o token CSRF vai à mão. -->
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                         <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
                 </div>

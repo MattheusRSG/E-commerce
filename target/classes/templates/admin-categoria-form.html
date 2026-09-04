@@ -28,7 +28,7 @@
                         <div class="alert alert-success" th:if="${sucesso}" th:text="${sucesso}"></div>
                         <div class="alert alert-danger" th:if="${erro}" th:text="${erro}"></div>
                         
-                        <form action="/admin/categorias/salvar" method="post">
+                        <form th:action="@{/admin/categorias/salvar}" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Nome da Categoria</label>
                                 <input type="text" class="form-control" name="nome" required>
