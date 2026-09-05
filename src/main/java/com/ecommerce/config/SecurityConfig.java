@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler;
 
 /**
  * Configuração do Spring Security.
@@ -44,11 +45,31 @@ public class SecurityConfig {
         );
     }
 
+    /**
+     * Resolve o token CSRF já no CsrfFilter, em vez de esperar alguém pedir por ele.
+     *
+     * O padrão do Spring Security 6 é adiar: o token só é criado quando o
+     * Thymeleaf encontra um formulário e pede o campo escondido. Nas páginas
+     * longas desta loja o primeiro formulário aparece bem depois do buffer de
+     * resposta do Tomcat ter sido descarregado — e criar a sessão que guarda o
+     * token depois da resposta enviada lança IllegalStateException.
+     *
+     * Passar null no nome do atributo faz o handler resolver o token na hora.
+     * Continua sendo o handler com máscara XOR, que protege contra BREACH.
+     *
+     * O efeito colateral é que toda visita passa a abrir sessão, inclusive a de
+     * quem só está olhando o catálogo.
+     */
+    private XorCsrfTokenRequestAttributeHandler csrfTokenRequestHandler() {
+        XorCsrfTokenRequestAttributeHandler handler = new XorCsrfTokenRequestAttributeHandler();
+        handler.setCsrfRequestAttributeName(null);
+        return handler;
+    }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            // CSRF fica no padrão (ativo, token na sessão). O Thymeleaf injeta o
-            // campo escondido em todo formulário que usa th:action.
+            .csrf(csrf -> csrf.csrfTokenRequestHandler(csrfTokenRequestHandler()))
             .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
             // O /login e o /logout são rotas do UserController; os handlers padrão
             // do Spring Security ficam desligados para não disputá-las.
